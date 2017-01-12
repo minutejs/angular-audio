@@ -1,0 +1,23 @@
+{
+  "name": "angular-audio",
+  
+  "authors": [
+    "minutephp <dev@minutephp.com>"
+  ],
+  "description": "Plays audio files using AngularJS (flash + HTML5)",
+  "main": "src/js/angular-audio.js",
+  "keywords": [
+    "angularjs",
+    "audio",
+    "player"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.minutephp.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

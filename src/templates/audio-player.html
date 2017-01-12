@@ -1,0 +1,15 @@
+<div class="inline-block">
+    <div class="inline-block" ng-show="ready">
+        <div ng-show="!sound && !hideDisabled" class="inline-block" disabled="true" ng-bind-html="trusted(playBtn || defaultBtn('play'))"></div>
+
+        <div ng-show="sound && html5" class="inline-block">
+            <a href="" ng-click="playFileHTML5()" ng-show="sound && !playing" ng-bind-html="trusted(playBtn || defaultBtn('play'))"></a>
+            <a href="" ng-click="stopFileHTML5()" ng-show="sound && playing" ng-bind-html="trusted(stopBtn || defaultBtn('stop'))"></a>
+        </div>
+
+        <div ng-show="sound && !html5" class="inline-block">
+            <a href="" ng-click="playFileFlash()" ng-show="sound && !playing" ng-bind-html="trusted(playBtn || defaultBtn('play'))"></a>
+            <a href="" ng-click="stopFileFlash()" ng-show="sound && playing" ng-bind-html="trusted(stopBtn || defaultBtn('stop'))"></a>
+        </div>
+    </div>
+</div>
