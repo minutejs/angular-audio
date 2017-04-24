@@ -1,13 +1,13 @@
 <div class="inline-block">
     <div ng-show="flash" class="inline-block">
-        <a href="" ng-show="!recording" ng-click="startRecordingFlash()" ng-bind-html="trusted(recBtn || defaultRecBtn)"></a>
-        <a href="" ng-show="recording" ng-click="stopRecordingFlash()" ng-bind-html="trusted(stopBtn || defaultStopBtn)"></a>
+        <a href="" ng-show="!recording" ng-click="startRecordingFlash()" ng-bind-html="trusted(recBtn || defaultBtn('record'))"></a>
+        <a href="" ng-show="recording" ng-click="stopRecordingFlash()" ng-bind-html="trusted(stopBtn || defaultBtn('stop'))"></a>
     </div>
 
     <div ng-show="html5" class="inline-block">
-        <a href="" ng-show="!recording" ng-click="startRecordingHTML5()" ng-bind-html="trusted(recBtn || defaultRecBtn)"></a>
-        <a href="" ng-show="recording" ng-click="stopRecordingHTML5()" ng-bind-html="trusted(stopBtn || defaultStopBtn)"></a>
+        <a href="" ng-show="!recording" ng-click="startRecordingHTML5()" ng-bind-html="trusted(recBtn || defaultBtn('record'))"></a>
+        <a href="" ng-show="recording" ng-click="stopRecordingHTML5()" ng-bind-html="trusted(stopBtn || defaultBtn('stop'))"></a>
     </div>
 
-    <div audio-player sound="{{sound}}"></div>
+    <div audio-player sound="{{sound}}" skin="{{skin}}" hide-disabled="true"></div>
 </div>

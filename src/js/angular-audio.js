@@ -119,7 +119,7 @@
                 restrict: 'A',
                 replace: true,
                 require: 'ngModel',
-                scope: {recBtn: '@', stopBtn: '@'},
+                scope: {recBtn: '@', stopBtn: '@', skin: '@'},
                 templateUrl: '/static/bower_components/angular-audio/src/templates/audio-recorder.html',
                 link: function ($scope, element, attrs, ngModel) {
                     if ($('#wami').length == 0) {
@@ -137,6 +137,25 @@
                 },
                 controller: function ($scope, $element) {
                     var recorder;
+
+                    $scope.defaultBtns = {
+                        icon: {
+                            record: '<i ng-show="!recording" class="fa fa-microphone ' + ($scope.btnClass) + '"></i>',
+                            stop: '<i ng-show="recording" class="fa fa-stop ' + ($scope.btnClass) + '"></i>'
+                        },
+                        simple: {
+                            record: '<span ng-show="!recording" class="btn ' + ($scope.btnClass || 'btn-success') + '"><i class="fa fa-microphone"></i> ' + ($scope.btnText || 'Record') + '</span>',
+                            stop: '<span ng-show="recording" class="btn ' + ($scope.btnClass || 'btn-success') + '"><i class="fa fa-stop"></i> ' + ($scope.btnText || 'Stop') + '</span>'
+                        },
+                        round: {
+                            record: '<i ng-show="!recording" class="fa fa-microphone ' + ($scope.btnClass) + '"></i>',
+                            stop: '<i ng-show="recording" class="fa fa-stop-circle ' + ($scope.btnClass) + '"></i>'
+                        }
+                    };
+
+                    $scope.defaultBtn = function (type) {
+                        return $scope.defaultBtns[$scope.skin || 'icon'][type];
+                    };
 
                     $scope.init = function () {
                         $scope.fn = "snd_" + Math.random().toString(36).substring(7);
